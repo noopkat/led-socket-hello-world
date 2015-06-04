@@ -22,8 +22,8 @@
       $('#picker')
         .spectrum({color: '#f00'})
         .on('change.spectrum', function(e, color) {
-          console.log(color.toHexString());
-          socket.emit('clienttest', 'bacon!');
+          console.log(color.toRgb());
+          socket.emit('clienttest', JSON.stringify(color.toRgb()));
         });
     </script>
   </body>  
