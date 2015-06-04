@@ -6,8 +6,14 @@
   </head>
   <body>
     <p>{{stuff}}<p>
+    <input type="text" id="picker" />
 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/vendor/spectrum/spectrum.js"></script>
-  </body>
-  
+    <script>
+      $('#picker').spectrum({
+          color: '#f00'
+      });
+    </script>
+  </body>  
 </html>
