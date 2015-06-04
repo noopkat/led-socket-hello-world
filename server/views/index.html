@@ -10,11 +10,20 @@
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/vendor/spectrum/spectrum.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io('http://localhost:8081');
+      socket.emit('clienttest', 'bacon!');
+      socket.on('servertest', function (data) {
+        console.log('heard from server!');
+      });
+    </script>
     <script>
       $('#picker')
         .spectrum({color: '#f00'})
         .on('change.spectrum', function(e, color) {
           console.log(color.toHexString());
+          socket.emit('clienttest', 'bacon!');
         });
     </script>
   </body>  
