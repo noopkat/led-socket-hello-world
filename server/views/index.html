@@ -11,9 +11,11 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/vendor/spectrum/spectrum.js"></script>
     <script>
-      $('#picker').spectrum({
-          color: '#f00'
-      });
+      $('#picker')
+        .spectrum({color: '#f00'})
+        .on('change.spectrum', function(e, color) {
+          console.log(color.toHexString());
+        });
     </script>
   </body>  
 </html>
