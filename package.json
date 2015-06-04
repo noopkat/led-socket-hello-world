@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/noopkat/led-socket-hello-world/issues"
   },
-  "homepage": "https://github.com/noopkat/led-socket-hello-world#readme"
+  "homepage": "https://github.com/noopkat/led-socket-hello-world#readme",
+  "dependencies": {
+    "handlebars": "^3.0.3",
+    "hapi": "^8.6.0",
+    "johnny-five": "^0.8.76",
+    "require-directory": "^2.1.1",
+    "socket.io": "^1.3.5"
+  }
 }
