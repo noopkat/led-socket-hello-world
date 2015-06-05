@@ -12,7 +12,7 @@
     <script src="/js/vendor/spectrum/spectrum.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io('http://localhost:8081');
+      var socket = io('http://localhost:8082');
       socket.emit('clienttest', 'bacon!');
       socket.on('servertest', function (data) {
         console.log('heard from server!');

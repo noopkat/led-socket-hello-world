@@ -2,7 +2,7 @@ var Hapi = require('hapi');
 var routes = require('./server/config/routes');
 
 var server = new Hapi.Server();
-server.connection({ port: 8081 });
+server.connection({ port: 8082 });
 
 server.views({
   engines: {
