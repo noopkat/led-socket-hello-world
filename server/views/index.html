@@ -6,14 +6,15 @@
   </head>
   <body>
     <p>{{stuff}}</p>
-    
+
     <input type="text" id="picker" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="/js/vendor/spectrum/spectrum.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io('http://localhost:8082');
+      var socket = io.connect();
+
       $('#picker')
         .spectrum({color: '#f00'})
         .on('change.spectrum', function(e, color) {
