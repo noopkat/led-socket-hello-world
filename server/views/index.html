@@ -5,7 +5,8 @@
     <link rel="stylesheet" type="text/css" href="/css/vendor/spectrum/spectrum.css">
   </head>
   <body>
-    <p>{{stuff}}<p>
+    <p>{{stuff}}</p>
+    
     <input type="text" id="picker" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -13,17 +14,11 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io('http://localhost:8082');
-      socket.emit('clienttest', 'bacon!');
-      socket.on('servertest', function (data) {
-        console.log('heard from server!');
-      });
-    </script>
-    <script>
       $('#picker')
         .spectrum({color: '#f00'})
         .on('change.spectrum', function(e, color) {
-          console.log(color.toRgb());
-          socket.emit('clienttest', JSON.stringify(color.toRgb()));
+          console.log(color.toHexString());
+          socket.emit('color:choice', color.toHexString());
         });
     </script>
   </body>  

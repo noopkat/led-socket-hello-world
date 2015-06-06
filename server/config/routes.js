@@ -22,7 +22,7 @@ module.exports = function() {
       path: '/images/{path*}',
       config : {
         handler: {
-          directory: { path: './public/images' }
+          directory: { path: __dirname + '/../../public/images' }
         }
       }
     },
@@ -31,7 +31,7 @@ module.exports = function() {
       path: '/js/{path*}',
       config : {
         handler: {
-          directory: { path: './public/js' }
+          directory: { path: __dirname + '/../../public/js' }
         }
       }
     },
@@ -40,7 +40,7 @@ module.exports = function() {
       path: '/css/{path*}',
       config : {
         handler: {
-          directory: { path: './public/css' }
+          directory: { path: __dirname + '/../../public/css' }
         }
       }
     }
