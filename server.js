@@ -1,3 +1,4 @@
+var five = require('johnny-five');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
 var routes = require('./server/config/routes');
@@ -19,8 +20,7 @@ for (var route in routes) {
 }
 
 // set up Arduino
-var five = require('johnny-five');
-var board = new five.Board();
+var board = new five.Board({repl: false});
 var led;
 
 // set up web socket to listen on server
