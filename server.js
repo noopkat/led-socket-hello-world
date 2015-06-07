@@ -1,3 +1,4 @@
+var config = require('./config');
 var five = require('johnny-five');
 var Hapi = require('hapi');
 var server = new Hapi.Server();
@@ -25,6 +26,7 @@ var led;
 
 // set up web socket to listen on server
 var io = require('socket.io')(server.listener);
+io.set('origins', config.wsOrigins);
 
 // when arduino board is ready
 board.on('ready', function() {
